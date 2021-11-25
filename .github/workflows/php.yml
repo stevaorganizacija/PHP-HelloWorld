@@ -15,25 +15,15 @@ jobs:
     - name: dummy
       run: echo "Dummy stage just to be more that one in this test..."
   build:
-
+    needs: dummy
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
     
-    - name: test
-      run: echo "Dummy stage just to be more that one in this test..."
-    
-    - name: Cache Composer packages
-      id: composer-cache
-      uses: actions/cache@v2
-      with:
-        path: vendor
-        key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-php-
+    - name: build
+      run: echo "build app"
   deploy:
-    
+    needs: build
     runs-on: ubuntu-latest
       
     steps:
