@@ -7,15 +7,18 @@ on:
     branches: [ test ]
 
 jobs:
-  build:
-
+  dummy:
     runs-on: ubuntu-latest
-
+    steps:
+      - run: echo "Dummy stage just to be more that one in this test..."
+      
+  build:
+    runs-on: ubuntu-latest
+    needs: dummy
     steps:
     - uses: actions/checkout@v2
     
     - name: test
-      run: echo "Dummy stage just to be more that one in this test..."
     
     - name: Cache Composer packages
       id: composer-cache
@@ -25,7 +28,13 @@ jobs:
         key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
         restore-keys: |
           ${{ runner.os }}-php-
-
+          
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - run: echo "deploy app"
+      
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
     # Docs: https://getcomposer.org/doc/articles/scripts.md
 
