@@ -7,14 +7,9 @@ on:
     branches: [ test ]
 
 jobs:
-  dummy:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "Dummy stage just to be more that one in this test..."
       
   build:
     runs-on: ubuntu-latest
-    needs: dummy
     steps:
     - uses: actions/checkout@v2
     
