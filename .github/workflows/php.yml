@@ -22,7 +22,8 @@ jobs:
     steps:
     
     - name: build
-      uses: docker://alpine:3.8
+      uses: docker://docker
+      #uses: docker://alpine:3.8
      # run: echo "build app"
   deploy:
     needs: build
@@ -30,4 +31,4 @@ jobs:
       
     steps:
     - name: deploy
-      run: echo "deploy app"
+      run: docker info
