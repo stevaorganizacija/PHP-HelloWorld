@@ -18,11 +18,12 @@ jobs:
   build:
     needs: dummy
    # runs-on: ubuntu-latest
-    runs-on: [self-hosted, linuxrucni]
+    runs-on: [self-hosted, linuxtest]
     steps:
     
     - name: build
-      run: echo "build app"
+      uses: docker://alpine:3.8
+     # run: echo "build app"
   deploy:
     needs: build
     runs-on: ubuntu-latest
