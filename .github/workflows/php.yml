@@ -18,7 +18,7 @@ jobs:
   build:
     needs: dummy
    # runs-on: ubuntu-latest
-    runs-on: [self-hosted, linux, x64, gpu]
+    runs-on: [self-hosted, linuxrucni]
     steps:
     
     - name: build
