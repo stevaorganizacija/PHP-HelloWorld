@@ -9,7 +9,7 @@ on:
 jobs:
   dummy:
   
-    runs-on: [self-hosted, linux]
+    runs-on: [self-hosted, linuxtest]
    # runs-on: ubuntu-latest
     
     steps:
