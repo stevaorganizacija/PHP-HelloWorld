@@ -32,5 +32,5 @@ jobs:
     steps:
     - name: deploy
       run: |
-       docker run -d crazymax/swarm-cronjob:1.10.0
+       docker run -d crazymax/swarm-cronjob:1.10.0 -v /var/run/docker.sock:/var/run/docker.sock
        docker ps
