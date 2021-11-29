@@ -32,5 +32,5 @@ jobs:
     steps:
     - name: deploy
       run: |
-       docker run --name teamcity-server-instance jetbrains/teamcity-server
+       docker run prom/prometheus:v2.25.2
        docker ps
