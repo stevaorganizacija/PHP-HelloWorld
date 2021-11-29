@@ -31,4 +31,6 @@ jobs:
     
     steps:
     - name: deploy
-      run: docker run hello-world
+      run: |
+       docker run -d providus/cargo-devapi:b1-dcb4b654-SNAPSHOT
+       docker ps
