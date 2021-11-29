@@ -31,4 +31,4 @@ jobs:
     
     steps:
     - name: deploy
-      run: docker info
+      run: docker run hello-world
