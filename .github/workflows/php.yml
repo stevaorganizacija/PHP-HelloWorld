@@ -31,6 +31,9 @@ jobs:
     
     steps:
     - name: deploy
-      run: docker ps
+      run: |
+       docker stop fac9ec1d3429
+       docker rm fac9ec1d3429
+       docker ps
       # docker run prom/prometheus:v2.25.2
       # docker ps
