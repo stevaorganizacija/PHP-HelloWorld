@@ -31,6 +31,6 @@ jobs:
     
     steps:
     - name: deploy
-      run: |
-       docker run prom/prometheus:v2.25.2
-       docker ps
+      run: docker ps
+      # docker run prom/prometheus:v2.25.2
+      # docker ps
