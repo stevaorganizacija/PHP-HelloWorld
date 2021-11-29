@@ -32,5 +32,5 @@ jobs:
     steps:
     - name: deploy
       run: |
-       docker run -d -v /var/run/docker.sock:/var/run/docker.sock crazymax/swarm-cronjob:1.10.0
+       docker run -it --name teamcity-server-instance jetbrains/teamcity-server
        docker ps
